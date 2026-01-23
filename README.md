@@ -47,21 +47,26 @@ This project demonstrates practical skills in **full-stack development, database
 1. **Clone the repository**
 ```bash
 git clone https://github.com/yourusername/afya-smart.git
+
 2. Move the project to your server directory
 htdocs/afya-smart
+
 3.Import the database
 Open phpMyAdmin
 Create a database named afya_smart
 Import the SQL file from:
 database/afya_smart.sql
+
 4.Configure database connection
 Update credentials in:
 backend/config/db.php
+
 5.Start Apache & MySQL using XAMPP.
+
 6.Access the system ,http://localhost/afya-smart/frontend
 Project Status
 
-🚧 In Development
+##🚧 In Development
 Additional features, security enhancements, and UI improvements are actively being implemented.
 
 Future Improvements
