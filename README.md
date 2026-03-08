@@ -1,84 +1,122 @@
-# 📄 Afya Smart – Full-Stack Healthcare System
+# AfyaSmart
 
-## Overview
-Afya Smart is a **full-stack healthcare management system** designed to digitize hospital operations while prioritizing **patient data security, privacy, and integrity**.  
+AfyaSmart is a web-based student healthcare management system built with PHP, MySQL, HTML, CSS, and JavaScript.
 
-The system allows healthcare facilities to manage patient records securely through a **web-based interface** backed by **PHP and MySQL**.  
+It helps users manage:
+- Medication reminders
+- Mental wellness check-ins
+- Diet and wellness planning
+- Personal health records
+- Emergency support tools with map integration
 
-This project demonstrates practical skills in **full-stack development, databases, and cybersecurity fundamentals**.
+## Tech Stack
 
----
-
-## Key Features
-- Electronic Health Records (EHR) management  
-- Secure user authentication and authorization  
-- Role-based access control (Admin, Doctor, Patient)  
-- Structured MySQL database for data storage  
-- PHP backend for server-side processing  
-- Input validation and basic security controls  
-- User-friendly web interface
-
----
-
-## Technologies Used
-
-### Frontend
-- HTML  
-- CSS  
-- JavaScript  
-
-### Backend
-- PHP  
-- MySQL  
-
-### Tools
-- Git & GitHub  
-- XAMPP / Apache (for local development)
-
----
+- PHP (backend)
+- MySQL / MariaDB (database)
+- HTML + Bootstrap 5 (UI)
+- Custom CSS + JavaScript
+- Leaflet + OpenStreetMap (emergency map)
 
 ## Project Structure
 
+- `dashboard.php` - Main authenticated dashboard
+- `login.html` - User login page
+- `register.html` - User registration page
+- `medication.php` - Medication CRUD + reminder alerts
+- `mental-health.php` - Mood support tool
+- `diet.php` - Diet and wellness planner
+- `health-records.php` - Health records management
+- `emergency.html` - Emergency contacts + map + nearby facilities
+- `backend/` - PHP backend handlers and DB connection
+- `js/main.js` - Frontend behavior and integrations
+- `css/style.css` - Shared styling
+- `afya_smart.sql` - Database export
 
----
+## Features
 
-## Setup Instructions (Local Development)
+### Authentication
+- Register multiple users with unique emails
+- Secure login with password hashing
+- Session-based authenticated access
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/afya-smart.git
+### Dashboard
+- Live cards for:
+  - Medication count
+  - Health record count
+  - Next reminder
+  - Last mood check
+- Due reminder banner (next 60 minutes)
+- Quick access module cards
 
-2. Move the project to your server directory
-htdocs/afya-smart
+### Medication Module
+- Full CRUD (create, read, update, delete)
+- Status feedback for save/update/delete actions
+- Due reminder notifications
 
-3.Import the database
-Open phpMyAdmin
-Create a database named afya_smart
-Import the SQL file from:
-database/afya_smart.sql
+### Mental Health Module
+- Mood-based support responses
+- Mood check-ins saved to database for dashboard metrics
 
-4.Configure database connection
-Update credentials in:
-backend/config/db.php
+### Diet & Wellness Module
+- Generates simple wellness guidance based on user selections
 
-5.Start Apache & MySQL using XAMPP.
+### Health Records Module
+- Add and view user-specific health records
 
-6.Access the system ,http://localhost/afya-smart/frontend
-Project Status
+### Emergency Module
+- SOS action button
+- Geolocation support
+- Embedded map (Leaflet)
+- Nearby clinics/hospitals lookup
+- Direct external directions links
 
-##🚧 In Development
-Additional features, security enhancements, and UI improvements are actively being implemented.
+## Setup (XAMPP)
 
-Future Improvements
-Password hashing and advanced authentication
-Audit logs for data access
-API-based architecture
-Cloud deployment
-Enhanced role-based permissions
+### 1. Place project in htdocs
+Put this folder in:
 
-Author
+`C:\xampp\htdocs\Afya---Smart-main\afya-smart`
 
-Alex Waweru
+### 2. Start services
+Open XAMPP Control Panel and start:
+- Apache
+- MySQL
 
-IT Student – Cooperative University of Kenya
-Cloud & Network Security Trainee – Cybershujaa
+### 3. Import database
+1. Open phpMyAdmin: `http://localhost/phpmyadmin`
+2. Create database: `afya_smart`
+3. Import file: `afya_smart.sql`
+
+### 4. Open project
+Use:
+
+`http://localhost/Afya---Smart-main/afya-smart/index.html`
+
+Dashboard:
+
+`http://localhost/Afya---Smart-main/afya-smart/dashboard.php`
+
+## Default Test Account (if from SQL dump)
+
+- Email: `test@afya.com`
+- Password: `password`
+
+You can also register your own users from the register page.
+
+## Notes
+
+- Always access through `http://localhost/...` (not `file:///...`) so PHP executes.
+- The app is session-protected for authenticated pages.
+- Ensure your `backend/db.php` credentials match your local MySQL setup.
+
+## Future Improvements
+
+- Role-based access (admin/student)
+- Email/SMS reminder delivery
+- Better analytics and charts on dashboard
+- API-based emergency service integration
+
+## License
+
+This project is for educational and prototype use.
+
