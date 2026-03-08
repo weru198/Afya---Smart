@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access emergency tools and critical contacts quickly through AfyaSmart.">
+    <meta name="theme-color" content="#0b5f49">
+    <meta property="og:title" content="AfyaSmart">
+    <meta property="og:description" content="Access emergency tools and critical contacts quickly through AfyaSmart.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Emergency Services | AfyaSmart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-body page-app">
+<nav class="navbar navbar-expand-lg navbar-dark glass-nav">
+    <div class="container">
+        <a class="navbar-brand" href="dashboard.php"><span class="brand-mark"><i class="bi bi-plus-lg"></i></span><span>AfyaSmart</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#authNav" aria-controls="authNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="authNav">
+            <ul class="navbar-nav ms-auto gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="medication.php">Medication</a></li>
+                <li class="nav-item"><a class="nav-link" href="mental-health.php">Mental Health</a></li>
+                <li class="nav-item"><a class="nav-link" href="diet.php">Diet & Wellness</a></li>
+                <li class="nav-item"><a class="nav-link" href="health-records.php">Health Records</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency.html">Emergency</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="backend/logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="main-wrap">
+    <div class="page-shell">
+        <section class="app-hero reveal-up module-hero">
+            <div>
+                <p class="app-hero-kicker">Emergency Module</p>
+                <h2>Access help quickly when needed</h2>
+                <p>Use SOS tools, live map view, and nearby health facilities during urgent situations.</p>
+            </div>
+            <div class="app-hero-badge">
+                <i class="bi bi-exclamation-triangle"></i>
+                <strong>Fast Response</strong>
+                <span>Critical contacts and nearest care locations.</span>
+            </div>
+        </section>
+
+        <section class="content-grid reveal-up" style="animation-delay:.1s;">
+            <article class="panel">
+                <div class="panel-title-row">
+                    <h4>Emergency Actions</h4>
+                    <span>Immediate</span>
+                </div>
+                <button id="sosBtn" class="btn btn-danger w-100 mb-3"><i class="bi bi-exclamation-octagon"></i>Send SOS Alert</button>
+                <h5>Your Location</h5>
+                <p id="location" class="text-muted">Location not available</p>
+                <div id="emergencyMap" class="emergency-map"></div>
+            </article>
+
+            <aside class="panel">
+                <div class="panel-title-row">
+                    <h4>Emergency Contacts</h4>
+                    <span>Always on</span>
+                </div>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">Ambulance: <strong>999 / 112</strong></li>
+                    <li class="list-group-item">Police: <strong>999</strong></li>
+                    <li class="list-group-item">Fire Department: <strong>999</strong></li>
+                    <li class="list-group-item">Campus Health Office</li>
+                </ul>
+
+                <div class="panel-title-row">
+                    <h4>Nearest Facilities</h4>
+                    <span>Map lookup</span>
+                </div>
+                <ul id="nearbyFacilities" class="list-group">
+                    <li class="list-group-item">Searching nearby facilities...</li>
+                </ul>
+            </aside>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p class="mb-0">Emergency location requires your permission.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
